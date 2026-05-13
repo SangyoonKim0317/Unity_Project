@@ -5,12 +5,18 @@ Obj/
 UserSettings/
 .vs/
 .vscode/	# Sieun add
+.vsconfig	# Sieun add
 
 *.csproj
 *.sln
+*.slnx
 *.user
 *.log
 
 # Sieun add
 /[Bb]uild/
 /[Bb]uilds/
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
