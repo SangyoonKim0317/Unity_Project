@@ -4,8 +4,6 @@ Logs/
 Obj/
 UserSettings/
 .vs/
-.vscode/	# Sieun add
-.vsconfig	# Sieun add
 
 *.csproj
 *.sln
@@ -20,3 +18,5 @@ UserSettings/
 .DS_Store?
 ._*
 Thumbs.db
+.vsconfig
+/.vscode
