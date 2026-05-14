@@ -80,6 +80,8 @@ public class Element : MonoBehaviour
         {
             return;
         }
+        Debug.Log("원소 충돌 발생: " + elementType + " / " + elementType);
+    }
 
         // 같은 두 원소가 충돌하면
         // A에서도 OnCollisionEnter2D가 실행되고
