@@ -16,6 +16,7 @@ public class Element : MonoBehaviour
 
     private void Awake()
     {
+        Debug.LogWarning("Element Awake 실행됨: " + gameObject.name);
         // Rigidbody2D 자동 연결
         if (rb == null)
         {
@@ -31,7 +32,7 @@ public class Element : MonoBehaviour
         // Scene에 있는 MergeManager 자동 연결
         if (mergeManager == null)
         {
-            mergeManager = FindObjectOfType<MergeManager>();
+            mergeManager = FindFirstObjectByType<MergeManager>();
         }
     }
 
@@ -68,6 +69,8 @@ public class Element : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.LogWarning("충돌 함수 실행됨: " + gameObject.name + " / " + collision.gameObject.name);
+        
         // 충돌한 상대 오브젝트에서 Element 컴포넌트 가져오기
         Element other = collision.gameObject.GetComponent<Element>();
 
