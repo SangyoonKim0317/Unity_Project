@@ -2,8 +2,8 @@ using UnityEngine;
 
 public enum GameState
 {
-    Ready,      // °ÔÀÓ ½ÃÀÛ Àü »óÅÂ
-    Playing,    // °ÔÀÓ ÁøÇà Áß
-    GameOver    // °ÔÀÓ Á¾·á »óÅÂ
+    Ready,      // ê²Œì„ ì‹œì‘ ì „ ìƒíƒœ
+    Playing,    // ê²Œì„ ì§„í–‰ ì¤‘
+    GameOver    // ê²Œì„ ì¢…ë£Œ ìƒíƒœ
     
 }

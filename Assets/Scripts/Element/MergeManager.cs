@@ -6,6 +6,33 @@ public class MergeManager : MonoBehaviour
 {
     public List<ElementData> elementDataList;
 
+    public bool CheckMerge(Element a, Element b)
+{
+    // 같은 타입 + 같은 레벨 → 머지
+    if (a.elementType == b.elementType && a.level == b.level)
+    {
+        if (a.level >= 3) return false; // 레벨 3 이상은 머지 안되도록 - 레벨 0부터 시작해서 최고레벨 3으로 설정함.
+        Merge(a, b);
+        return true; 
+    }
+
+    // 불 vs 물 파괴 로직
+    if (a.elementType != b.elementType)
+    {
+        Element water = (a.elementType == ElementType.Water) ? a : b;
+        Element fire = (a.elementType == ElementType.Fire) ? a : b;
+
+        if (fire.level >= water.level)
+        {
+            DestroyByRule(water, fire);
+            return true; 
+        }
+    }
+
+    return false; 
+}
+
+/* 
     // 머지 가능 여부 확인 및 처리
     public void CheckMerge(Element a, Element b)
     {
@@ -29,8 +56,10 @@ public class MergeManager : MonoBehaviour
                 DestroyByRule(water, fire);
             }
         }
+        
     }
-
+*/
+    
     // 같은 레벨 + 같은 타입 머지
     public void Merge(Element a, Element b)
     {
@@ -40,19 +69,9 @@ public class MergeManager : MonoBehaviour
         int nextLevel = a.level + 1;
         Vector2 mergePosition = (a.transform.position + b.transform.position) / 2f;
 
-        // 머지된 원소의 점수 계산 (두 원소의 점수 합산)
-        int mergeScore = GetScoreForElement(mergedType, a.level) + GetScoreForElement(mergedType, b.level);
-
         // 기존 두 원소 파괴
         Destroy(a.gameObject);
         Destroy(b.gameObject);
-
-        // 점수 추가
-        ScoreManager scoreManager = GameManager.Instance.scoreManager;
-        if (scoreManager != null)
-        {
-            scoreManager.AddScore(mergeScore);
-        }
 
         // 다음 레벨 원소가 존재하면 생성
         ElementData nextData = GetElementData(mergedType, nextLevel);
@@ -108,7 +127,7 @@ public class MergeManager : MonoBehaviour
         }
 
         // 스케일 설정
-        newObj.transform.localScale = Vector3.one * data.scale;
+        // newObj.transform.localScale = Vector3.one * data.scale;
 
         // 질량 설정
         Rigidbody2D rb = newObj.GetComponent<Rigidbody2D>();

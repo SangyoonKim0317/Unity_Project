@@ -2,6 +2,6 @@ using UnityEngine;
 
 public enum ElementType
 {
-    Water,      // ¹° ¿ø¼Ò
-    Fire        // ºÒ ¿ø¼Ò
+    Water,      // ë¬¼ ì›ì†Œ
+    Fire        // ë¶ˆ ì›ì†Œ
 }

@@ -66,7 +66,7 @@ public class Element : MonoBehaviour
         {
             return;
         }
-
+/*
         if (mergeManager != null)
         {
             isProcessingCollision = true;
@@ -74,8 +74,20 @@ public class Element : MonoBehaviour
 
             mergeManager.CheckMerge(this, other);
         }
-        else
-        {
+ */
+        if (mergeManager != null) {
+            isProcessingCollision = true;
+            other.isProcessingCollision = true;
+
+            bool isMerged = mergeManager.CheckMerge(this, other);
+
+            if (isMerged == false) {
+                isProcessingCollision = false;
+                other.isProcessingCollision = false;
+            }
+        }
+        
+        else {
             Debug.LogWarning("MergeManager를 찾을 수 없습니다.");
         }
     }
