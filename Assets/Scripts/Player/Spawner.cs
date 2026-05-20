@@ -34,6 +34,7 @@ public class Spawner : MonoBehaviour
     {
         if (canDrop == false) // 드롭 불가능 상태 시 드롭 스킵
         {
+            Debug.LogWarning("failed to drop element: cooldown in progress");
             return;
         }
 
@@ -63,6 +64,14 @@ public class Spawner : MonoBehaviour
                     checker.RegisterElement(element);
                 }
             }
+            else 
+            {
+                Debug.LogWarning("failed to get ElementData for type: " + spawnType + ", level: " + nextLevel);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("failed to find MergeManager");
         }
 
         SetNextElement();

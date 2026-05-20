@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour
 
     float dir = 0f;
 
-    // 유니티 에디터에서 값이 바뀔 때마다 자동으로 실행되는 마법의 함수!
-    // Player Number 슬라이더를 움직여보면 키 세팅이 실시간으로 바뀌는 걸 볼 수 있어.
     private void OnValidate()
     {
         SetDefaultKeyBindings();

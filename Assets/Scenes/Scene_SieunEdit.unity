@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 394613676}
   - component: {fileID: 394613675}
-  - component: {fileID: 394613674}
   - component: {fileID: 394613673}
   m_Layer: 0
   m_Name: GameManager
@@ -151,19 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   currentScore: 0
---- !u!114 &394613674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394613672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e78aa12c9d3d6b142aa05b818a4392ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MergeManager
-  elementDataList: []
 --- !u!114 &394613675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   scoreManager: {fileID: 0}
-  mergeManager: {fileID: 0}
+  mergeManager: {fileID: 1496954737}
   gameOverChecker: {fileID: 0}
   uiManager: {fileID: 0}
   currentState: 0
@@ -1654,56 +1640,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MergeManager
   elementDataList:
   - elementType: 0
-    level: 1
+    level: 0
     prefab: {fileID: 8789236718675110727, guid: 5d2d96b906cd717449a66f588fe9731a, type: 3}
-    sprite: {fileID: 6175064692937923731, guid: bcbb7cc12c7b34fcf9cd98e21984347c, type: 3}
+    sprite: {fileID: 5868612593429392887, guid: 8e326a5a126114700981b16ee107030d, type: 3}
     mass: 1
     scale: 1
     score: 10
   - elementType: 0
-    level: 2
+    level: 1
     prefab: {fileID: 145431037577513349, guid: 8470b32e8c6ec6f4e87869d150a03bc2, type: 3}
     sprite: {fileID: 1664458881420405060, guid: a693e0956017f44aabd4500f65aeb4cf, type: 3}
     mass: 2.5
     scale: 1.3
     score: 30
   - elementType: 0
-    level: 3
+    level: 2
     prefab: {fileID: 6822574206845094954, guid: a67dee7740795c2488429439e15d5b72, type: 3}
     sprite: {fileID: -2065984041467941068, guid: 49d06a1df98874cc496beb17a68aba04, type: 3}
     mass: 6
     scale: 1.7
     score: 80
   - elementType: 0
-    level: 4
+    level: 3
     prefab: {fileID: 2641418830731759557, guid: 05ba9d4c7f9137f4798219e32add8925, type: 3}
     sprite: {fileID: 6175064692937923731, guid: bcbb7cc12c7b34fcf9cd98e21984347c, type: 3}
     mass: 15
     scale: 2.2
     score: 200
   - elementType: 1
-    level: 1
+    level: 0
     prefab: {fileID: 6975813482075448292, guid: dad828058b0ebf14294354284d60f3f3, type: 3}
     sprite: {fileID: -3149389169688070996, guid: f08602d0fae3f43e39fcfab2bb977ebc, type: 3}
     mass: 1
     scale: 1
     score: 10
   - elementType: 1
-    level: 2
+    level: 1
     prefab: {fileID: 3923617725861873403, guid: e279fc5528aae634ab1f754dc1d530dd, type: 3}
     sprite: {fileID: -4262964722907211117, guid: e36d6929780294e2bbffaedc1caedc44, type: 3}
     mass: 2.5
     scale: 1.3
     score: 30
   - elementType: 1
-    level: 3
+    level: 2
     prefab: {fileID: 8341423721861976011, guid: 5091705f425e72b428ca8e4cd46add47, type: 3}
     sprite: {fileID: 6673312695985084743, guid: 3e8fdae3ae35e4ad18486a60d571f418, type: 3}
     mass: 6
     scale: 1.7
     score: 80
   - elementType: 1
-    level: 4
+    level: 3
     prefab: {fileID: 2321608106009986444, guid: 460e1159b43dc1445b4c196c5c8d3139, type: 3}
     sprite: {fileID: -5606718777101302656, guid: 3c803910949a8404791ebdf5dfb21ebd, type: 3}
     mass: 15

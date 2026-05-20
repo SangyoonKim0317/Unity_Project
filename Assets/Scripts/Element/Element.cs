@@ -26,7 +26,6 @@ public class Element : MonoBehaviour
             rb = GetComponent<Rigidbody2D>();
         }
 
-        // 💡 여기서도 Collider2D를 찾도록 수정!
         if (col == null)
         {
             col = GetComponent<Collider2D>();
