@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "SCORE : " + currentScore.ToString();
+            scoreText.text = currentScore.ToString();
         }
     }
 
